@@ -10,6 +10,6 @@ There is a built .apk file that does not work.
 
 # How to run
   1. clone and enter directory
-  2. `npm install'
+  2. `npm install`
   3. `react-native run-android`
   4. `npm start`
