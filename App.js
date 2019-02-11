@@ -6,7 +6,8 @@ import {
   Image ,
   TextInput,
   Dimensions,
-  Button
+  Button,
+  ToastAndroid
 } from 'react-native';
 import ImageOverlay from "react-native-image-overlay";
 import Voice from 'react-native-voice';
@@ -52,11 +53,13 @@ export default class App extends React.Component {
     Voice.destroy().then(Voice.removeAllListeners);
   }
   onSpeechStart(e) {
+    ToastAndroid.show('Recording!', ToastAndroid.SHORT);
     this.setState({
       started: '√',
     });
   }
   onSpeechRecognized(e) {
+    ToastAndroid.show('Understanding!', ToastAndroid.SHORT);
     this.setState({
       recognized: '√',
     });
@@ -134,8 +137,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: 'stretch',
+    justifyContent: 'space-between',
   },
   overname: {
     alignItems: 'center',
@@ -143,19 +146,15 @@ const styles = StyleSheet.create({
     fontFamily: 'impact',
     fontSize: 56,
     color: 'black',
-    position: 'absolute',
-    top:40,
   },
   img: {
     alignItems: 'center',
+    flexDirection: 'column',
     justifyContent: 'center',
-    margin: 10,
-    bottom: 40,
-    position: 'absolute',
+    marginTop: 10,
+    marginBottom: 10,
   },
   input_container: {
-    top: height*1/8,
-    position: 'absolute',
   },
   input: {
     height: 50,
@@ -166,25 +165,24 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     alignItems: 'center',
     justifyContent: 'center',
-    width: widthHalves,
     fontSize: 18,
   },
   bottom: {
     alignItems: 'center',
     justifyContent: 'center',
-    bottom: -80,  
     fontFamily: 'impact',
     fontSize: 56,
     color: 'white',
     textShadowColor: 'black',
     textShadowOffset: {width: -1, height: 1},
     textShadowRadius: 10,
-    fontWeight: '800'
+    fontWeight: '800',
+    bottom: -80
   },
   top: {
+    top: -80,
     alignItems: 'center',
     justifyContent: 'center',
-    top: -80, 
     fontFamily: 'impact',
     fontSize: 56,
     color: 'white',
