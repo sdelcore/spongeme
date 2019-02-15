@@ -153,6 +153,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginTop: 10,
     marginBottom: 10,
+
   },
   input_container: {
   },
@@ -171,6 +172,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     fontFamily: 'impact',
+    textAlign: 'center',
     fontSize: 56,
     color: 'white',
     textShadowColor: 'black',
@@ -183,6 +185,7 @@ const styles = StyleSheet.create({
     top: -80,
     alignItems: 'center',
     justifyContent: 'center',
+    textAlign: 'center',
     fontFamily: 'impact',
     fontSize: 56,
     color: 'white',
